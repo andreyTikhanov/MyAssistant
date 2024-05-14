@@ -9,9 +9,9 @@
       Title="AddNote">
 
     <StackPanel Background="#69b898">
-        <Label FontSize="15">Введите категорию заметки:</Label>
+        <Label Name="lbCat" FontSize="15">Введите категорию заметки:</Label>
         <TextBox Name="tbCategory" FontSize="15" Background="#a0d3bf" Height="30"/>
-        <Label FontSize="15">Введите название заметки:</Label>
+        <Label Name="lbTitle" FontSize="15">Введите название заметки:</Label>
         <TextBox Name="tbTitle" FontSize="15" Background="#a0d3bf" Height="30"/>
         <Label FontSize="15">Введите описание заметки:</Label>
         <TextBox Name="tbDescription" FontSize="15" Background="#a0d3bf" Height="350" AcceptsReturn="True"/>

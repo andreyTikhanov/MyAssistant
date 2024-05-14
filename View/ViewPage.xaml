@@ -1,0 +1,17 @@
+﻿<Page x:Class="Assistant.View.ViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Assistant.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ViewPage">
+    <StackPanel Background="#69b898">
+        <Label Content="Выберите категорию:" FontSize="15"></Label>
+        <ListBox SelectionChanged="lbCategories_SelectionChanged"  Name="lbCategories" Height="400" Background="#a0d3bf" ></ListBox>
+        <Button Click="btnContinue_Click" Background="#a0d3bf" Margin="300 10" Padding="5" FontSize="15" Content="Продолжить"></Button>
+        <Button Click="btnBack_Click" Background="#a0d3bf" Margin="300 10" Padding="5" FontSize="15" Content="Назад"></Button>
+    
+    </StackPanel>
+</Page>

@@ -9,16 +9,14 @@
       Title="ChoiceAdd">
 
     <StackPanel Background="#69b898">
-        <Label FontSize="15" Content="Выберите или создайте новую заметку: "></Label>
+        <Label Margin="240 10" FontSize="15" Content="Выберите или создайте новую заметку: "></Label>
         <ListBox SelectionChanged="lbCategories_SelectionChanged"  Name="lbCategories" Height="350" Background="#a0d3bf"></ListBox>
-        <Label FontSize="15" Content="Выберите действие: " ></Label>
+        <Label Margin="320 10" FontSize="15" Content="Выберите действие: " ></Label>
+        <Button Click="btn_AddNote_Click" Padding="5" Margin="300 10" FontSize="15" Background="#a0d3bf" Content="Создать новую заметку"></Button>
+        <Button Click="btnContinue_Click" Padding="5" Margin="300 10" FontSize="15" Background="#a0d3bf" Content="Продолжить"></Button>
+        <Button Click="btnBack_Click" Padding="5" Margin="300 10" FontSize="15" Background="#a0d3bf" Content="Назад"></Button>
+       
         
-        <StackPanel Orientation="Horizontal">
-            <Button Click="btn_AddNote_Click" Margin="40 10 10 20" FontSize="15" Background="#a0d3bf" Content="Создать новую заметку"></Button>
-            <Button Click="btnContinue_Click" Margin="160 10 10 20" FontSize="15" Background="#a0d3bf" Content="Продолжить"></Button>
-            <Button Click="btnBack_Click" Margin="210 10 10 20" FontSize="15" Background="#a0d3bf" Content="Назад"></Button>
-        </StackPanel>
-        <TextBox x:Name="tb"></TextBox>
      
     </StackPanel>
 </Page>

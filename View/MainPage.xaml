@@ -35,7 +35,7 @@
     <Grid Background="#69b898">
 
         <Button Click="btnAddNote_Click" Content="Добавить заметку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="282,73,0,0"/>
-        <Button Content="Посмотреть заметку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="281,141,0,0"/>
+        <Button Click="btnViewNote_Click" Content="Посмотреть заметку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="281,141,0,0"/>
         <Button Content="Редактировать заметку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="281,206,0,0"/>
         <Button Content="Удалить заметку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="282,270,0,0"/>
         <Button Click="btnExit_Click" Content="Выйти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="50" Margin="282,337,0,0"/>

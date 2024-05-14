@@ -29,7 +29,11 @@ namespace Assistant.View
         {
             Application.Current.Shutdown();
         }
-
+        private void btnViewNote_Click(object sender, RoutedEventArgs e)
+        {
+           ViewPage viewPage = new ViewPage();
+            NavigationService?.Navigate(viewPage);
+        }
         private void btnAddNote_Click(object sender, RoutedEventArgs e)
         {
             ChoiceAdd choiceAdd = new ChoiceAdd();

@@ -42,13 +42,13 @@ namespace Assistant.View
 
             if (string.IsNullOrEmpty(category))
             {
-                tbCategory.Text = "Введите название категории";
+                lbCat.Content = "Вы не ввели название категории";
                 return;
             }
 
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(description))
             {
-                tbTitle.Text = "Введите название заметки";
+                lbTitle.Content = "Вы не ввели название заметки";
                 return;
             }
 
