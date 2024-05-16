@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Model\ViewPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Folder Include="viewModel\" />
   </ItemGroup>
 
 </Project>
