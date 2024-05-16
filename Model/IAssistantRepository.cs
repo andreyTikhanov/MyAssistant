@@ -10,9 +10,14 @@ namespace Assistant.model
     {
         bool OpenConnect();
         bool CloseConnect();
-        void AddNote();
-        void RemoveNote();
-        void UpdateNote();
+        void AddNote(Note note);
+        void RemoveNote(Note note);
+        void UpdateNote(Note note );
+        void AddCategory(Category category);
+        void RemoveCategory(Category category);
+        void UpdateCategory(Category category);
+        Note GetNote(string id);
+        Category GetCategory(int id);
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using Assistant.model;
 using Assistant.view;
 using System.Text;
 using System.Windows;
@@ -18,13 +19,28 @@ namespace Assistant
     /// </summary>
     public partial class MainWindow : Window
     {
+        IAssistantRepository _assistantRepository;
 
         public MainWindow()
         {
+            _assistantRepository =new SQLiteAssistantRepository();    
             InitializeComponent();
-            mainWindow mainWindow = new mainWindow();
-            mainFrame.NavigationService.Navigate(mainWindow);
             
+            //mainWindow mainWindow = new mainWindow();
+            //mainFrame.NavigationService.Navigate(mainWindow);
+           
+            
+        }
+
+        private void btn_click(object sender, RoutedEventArgs e)
+        {
+            Category category = _assistantRepository.GetCategory(2);
+            if (category != null)
+            {
+                tb2.Text=category.Title;
+            }
+
+
         }
     }
 }
