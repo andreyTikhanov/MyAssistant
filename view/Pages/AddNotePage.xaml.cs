@@ -31,12 +31,20 @@ namespace Assistant.view
         public void LoadCategories()
         {
             List<Category> categories=_repository.GetAllCategories();
-            lbCategory.ItemsSource = categories.ToList();
+            lbCategory.ItemsSource = categories;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+        private void btnContinue_Click(object sender, RoutedEventArgs e)
+        {
+            Category selectedCategory = lbCategory.SelectedItem as Category;
+            if(selectedCategory != null)
+            {
+                NavigationService.Navigate(new AddNoteInExistsCategory(selectedCategory));
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assistant.model
 {
-    internal class Category
+    public class Category
     {
 		private int id;
 

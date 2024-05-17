@@ -19,6 +19,7 @@ namespace Assistant.model
         Note GetNote(int id);
         Category GetCategory(int id);
         List<Category> GetAllCategories();
+        List<Note> GetAllNotes();
 
     }
 }

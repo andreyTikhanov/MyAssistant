@@ -1,11 +1,4 @@
 ﻿using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Assistant.model
 {
@@ -92,7 +85,8 @@ namespace Assistant.model
                         Title = reader.GetString(1),
                         Description = reader.GetString(2)
                     };
-                } else
+                }
+                else
                 {
                     return null;
                 }
@@ -150,7 +144,6 @@ namespace Assistant.model
                 }
             }
         }
-
         public List<Category> GetAllCategories()
         {
             List<Category> categories = new List<Category>();
@@ -160,25 +153,40 @@ namespace Assistant.model
             command.CommandText = query;
             using (SqliteDataReader reader = command.ExecuteReader())
             {
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    while (reader.Read())
+                    categories.Add(new Category()
                     {
-                        categories.Add(new Category()
-                        {
-                            Id = reader.GetInt32(0),
-                            Title = reader.GetString(1),
-                        });
-                    }
-                    return categories;
+                        Id = reader.GetInt32(0),
+                        Title = reader.GetString(1),
+                    });
                 }
-                else
+                return categories;
+
+            }
+        }
+        public List<Note> GetAllNotes()
+        {
+            List<Note> notes = new List<Note>();
+            if (!OpenConnect()) return notes;
+            string query = "SELECT * FROM note; ";
+            SqliteCommand command = _connection.CreateCommand();
+            command.CommandText = query;
+            using (SqliteDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
                 {
-                    return null;
+                    notes.Add(new Note()
+                    {
+                        Id = reader.GetInt32(0),
+                        Title = reader.GetString(1),
+                        Description = reader.GetString(2),
+                        Id_category = reader.GetInt32(3)
+                    });
                 }
-                
+                return notes;
             }
         }
     }
-    
+
 }
