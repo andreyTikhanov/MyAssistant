@@ -6,9 +6,6 @@ using System.Windows.Navigation;
 
 namespace Assistant.view
 {
-    /// <summary>
-    /// Логика взаимодействия для AddNotePage.xaml
-    /// </summary>
     public partial class AddNotePage : Page
     {
         private SQLiteAssistantRepository _repository;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assistant.view.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,11 @@ namespace Assistant.view
         {
             AddNotePage addNotePage = new AddNotePage();
             NavigationService.Navigate(addNotePage);
+        }
+
+        private void btnView_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ViewCategories());
         }
     }
 }
