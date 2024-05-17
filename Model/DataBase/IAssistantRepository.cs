@@ -16,8 +16,8 @@ namespace Assistant.model
         void AddCategory(Category category);
         void RemoveCategory(Category category);
         void UpdateCategory(Category category);
-        Note GetNote(int id);
-        Category GetCategory(int id);
+        Note GetNote(string title);
+        Category GetCategory(string title);
         List<Category> GetAllCategories();
         List<Note> GetAllNotes();
 

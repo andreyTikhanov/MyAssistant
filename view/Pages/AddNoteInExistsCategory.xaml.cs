@@ -23,20 +23,20 @@ namespace Assistant.view
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            Save();
+        }
+        public void Save()
+        {
             if (tbTitleNote.Text == "" || tbDescriptionNote.Text == "") return;
             Note note = new Note();
             note.Title = tbTitleNote.Text;
             note.Description = tbDescriptionNote.Text;
-            note.Id_category= category.Id;
+            note.Id_category = category.Id;
             _repository.AddNote(note);
             lbTitleCategory.Content = "Заметка успешно добавлена";
             tbTitleNote.Text = "";
             tbDescriptionNote.Text = "";
-
-
-
         }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

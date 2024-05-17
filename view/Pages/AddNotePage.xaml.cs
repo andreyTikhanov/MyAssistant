@@ -1,18 +1,8 @@
 ﻿using Assistant.model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assistant.view.Pages;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Assistant.view
 {
@@ -30,7 +20,7 @@ namespace Assistant.view
         }
         public void LoadCategories()
         {
-            List<Category> categories=_repository.GetAllCategories();
+            List<Category> categories = _repository.GetAllCategories();
             lbCategory.ItemsSource = categories;
         }
 
@@ -41,10 +31,15 @@ namespace Assistant.view
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
             Category selectedCategory = lbCategory.SelectedItem as Category;
-            if(selectedCategory != null)
+            if (selectedCategory != null)
             {
                 NavigationService.Navigate(new AddNoteInExistsCategory(selectedCategory));
             }
+        }
+
+        private void btnAddCategory_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddCategoryAndNote());
         }
     }
 }

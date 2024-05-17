@@ -69,12 +69,12 @@ namespace Assistant.model
             cmd.ExecuteNonQuery();
             CloseConnect();
         }
-        public Note GetNote(int id)
+        public Note GetNote(string title)
         {
             if (!OpenConnect()) return null;
-            string query = "SELECT * FROM note WHERE id = @id;";
+            string query = "SELECT * FROM note WHERE title = @t;";
             SqliteCommand cmd = _connection.CreateCommand(); cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@t", title);
             using (SqliteDataReader reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
@@ -120,13 +120,13 @@ namespace Assistant.model
             cmd.ExecuteNonQuery();
             CloseConnect();
         }
-        public Category GetCategory(int id)
+        public Category GetCategory(string title)
         {
             if (!OpenConnect()) return null;
-            string query = "SELECT * FROM category WHERE id = @id;";
+            string query = "SELECT * FROM category WHERE title = @t;";
             SqliteCommand cmd = _connection.CreateCommand();
             cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@t", title);
 
             using (SqliteDataReader reader = cmd.ExecuteReader())
             {
