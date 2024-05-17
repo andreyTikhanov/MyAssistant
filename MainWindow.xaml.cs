@@ -25,22 +25,10 @@ namespace Assistant
         {
             _assistantRepository =new SQLiteAssistantRepository();    
             InitializeComponent();
-            
-            //mainWindow mainWindow = new mainWindow();
-            //mainFrame.NavigationService.Navigate(mainWindow);
-           
-            
+            MainPage mainPage = new MainPage();
+            MainFrame.NavigationService.Navigate(mainPage);
         }
 
-        private void btn_click(object sender, RoutedEventArgs e)
-        {
-            Category category = _assistantRepository.GetCategory(2);
-            if (category != null)
-            {
-                tb2.Text=category.Title;
-            }
-
-
-        }
+       
     }
 }

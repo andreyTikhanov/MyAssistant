@@ -6,11 +6,8 @@
         xmlns:local="clr-namespace:Assistant"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="600" Width="800">
-    <StackPanel>
-        <Label FontSize="30" Content="title category"></Label>
-        <TextBox Name="tbc" FontSize="30"></TextBox>
-        <Button FontSize="30" Click="btn_click" >ok </Button>
-        <TextBox x:Name="tb2" FontSize="39"></TextBox>
-    </StackPanel>
+        Title="Assistant" Height="600" Width="800">
+    <Grid>
+        <Frame x:Name="MainFrame"/>
+    </Grid>
 </Window>

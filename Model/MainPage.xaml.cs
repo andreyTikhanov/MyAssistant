@@ -16,13 +16,23 @@ using System.Windows.Shapes;
 namespace Assistant.view
 {
     /// <summary>
-    /// Логика взаимодействия для mainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class mainWindow : Page
+    public partial class MainPage : Page
     {
-        public mainWindow()
+        public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown(); 
+        }
+        private void btnAddNote_Click(object sender, RoutedEventArgs e)
+        {
+            AddNotePage addNotePage = new AddNotePage();
+            NavigationService.Navigate(addNotePage);
         }
     }
 }
