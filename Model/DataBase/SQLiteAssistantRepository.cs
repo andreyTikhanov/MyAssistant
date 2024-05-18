@@ -162,7 +162,6 @@ namespace Assistant.model
                     });
                 }
                 return categories;
-
             }
         }
         public List<Note> GetAllNotes()
@@ -187,6 +186,7 @@ namespace Assistant.model
                 return notes;
             }
         }
+        
     }
 
 }

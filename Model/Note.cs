@@ -1,6 +1,6 @@
 ﻿namespace Assistant.model
 {
-    internal class Note
+    public class Note
     {
         private int id;
 

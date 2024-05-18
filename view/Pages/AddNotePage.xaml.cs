@@ -9,18 +9,23 @@ namespace Assistant.view
     public partial class AddNotePage : Page
     {
         private SQLiteAssistantRepository _repository;
+      
+
         public AddNotePage()
         {
             InitializeComponent();
             _repository = new SQLiteAssistantRepository();
             LoadCategories();
+          
+
+            
         }
         public void LoadCategories()
         {
-            List<Category> categories = _repository.GetAllCategories();
-            lbCategory.ItemsSource = categories;
+           List<Category> categories = _repository.GetAllCategories();
+           lbCategory.ItemsSource = categories;
         }
-
+        
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

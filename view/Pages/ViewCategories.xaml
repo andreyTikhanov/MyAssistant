@@ -13,6 +13,7 @@
                FontSize="20" Margin="10 10 "
                Content="Выберите категорию заметки:"/>
         <ListBox 
+            DisplayMemberPath="Title"
             Foreground="#4a4a08" FontSize="20"
             Margin="0 0 0 10" Background="#0c939b"
             x:Name="lbTitleCategory" Height="360"/>

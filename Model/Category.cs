@@ -23,5 +23,6 @@
             this.id = id;
             this.title = title;
         }
+       
     }
 }
