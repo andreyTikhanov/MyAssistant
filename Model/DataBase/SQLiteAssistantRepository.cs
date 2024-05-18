@@ -186,7 +186,41 @@ namespace Assistant.model
                 return notes;
             }
         }
-        
+        public List<Note> SelectedCategory(Category category)
+        {
+            List<Note> notes = new List<Note>();
+            if (!OpenConnect()) return notes;
+
+        string selectQuery = @"
+        SELECT n.id, n.title, n.description, n.id_category
+        FROM note n
+        INNER JOIN category c ON n.id_category = c.id
+        WHERE c.title = @categoryTitle";
+
+            using (SqliteCommand command = new SqliteCommand(selectQuery, _connection))
+            {
+                command.Parameters.AddWithValue("@categoryTitle", category.Title);
+
+                using (SqliteDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        notes.Add(new Note()
+                        {
+                            Id = reader.GetInt32(0),
+                            Title = reader.GetString(1),
+                            Description = reader.GetString(2),
+                            Id_category = reader.GetInt32(3)
+                        });
+                    }
+                }
+            }
+
+            return notes;
+        }
+
     }
 
 }
+
+

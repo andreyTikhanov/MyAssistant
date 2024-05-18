@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,7 +24,7 @@ namespace Assistant.view.Pages
     {
        
         SQLiteAssistantRepository _repository;
-        Category categoriy;
+        
        
         public ViewTitleNotes()
         {
@@ -34,14 +35,15 @@ namespace Assistant.view.Pages
         {
             _repository = new SQLiteAssistantRepository();
             InitializeComponent();
-            LoadNotes(category.Title);
+            LoadNotes(category);
+           
 
         }
-        public void LoadNotes(string title)
+        public void LoadNotes(Category category)
         {
-            List<Note>notes=_repository.GetAllNotes();
-            lbTitleNotes.ItemsSource= notes.ToList();
-
+            List<Note> notes = _repository.SelectedCategory(category);
+            lbTitleNotes.ItemsSource = notes.ToList();
+  
         }
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)
