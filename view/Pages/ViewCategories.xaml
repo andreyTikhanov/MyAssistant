@@ -11,6 +11,7 @@
     <StackPanel Background="#096f79">
         <Label Foreground="#4a4a08"
                FontSize="20" Margin="10 10 "
+               Name="lbCategory"
                Content="Выберите категорию заметки:"/>
         <ListBox 
             DisplayMemberPath="Title"

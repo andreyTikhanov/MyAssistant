@@ -15,8 +15,6 @@ namespace Assistant.view.Pages
             _repository = new SQLiteAssistantRepository();
             InitializeComponent();
             LoadCategories();
-           
-            
         }
 
         public void LoadCategories()
@@ -24,11 +22,13 @@ namespace Assistant.view.Pages
             List<Category> categories = _repository.GetAllCategories();
             lbTitleCategory.ItemsSource = categories.ToList();
         }
-        
-
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
             Category selectedCategory = lbTitleCategory.SelectedItem as Category;
+            if (selectedCategory == null)
+            {
+                lbCategory.Content = "Вы не выбрали категорию"; 
+            }
             if (selectedCategory != null)
             {
                 NavigationService.Navigate(new ViewTitleNotes(selectedCategory));
@@ -36,7 +36,6 @@ namespace Assistant.view.Pages
 
 
         }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
