@@ -113,9 +113,9 @@ namespace Assistant.model
         public void UpdateCategory(Category category)
         {
             if (!OpenConnect()) return;
-            string query = "UPDATE INTO category SET title = @tc WHERE id = @id;";
+            string query = "UPDATE category SET title = @nt WHERE id = @id;";
             SqliteCommand cmd = _connection.CreateCommand(); cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@tc", category.Title);
+            cmd.Parameters.AddWithValue("@nt", category.Title);
             cmd.Parameters.AddWithValue("@id", category.Id);
             cmd.ExecuteNonQuery();
             CloseConnect();

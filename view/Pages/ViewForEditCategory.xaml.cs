@@ -1,14 +1,11 @@
 ﻿using Assistant.model;
-using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace Assistant.view.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для ViewForEditCategory.xaml
-    /// </summary>
     public partial class ViewForEditCategory : Page
     {
         SQLiteAssistantRepository _repository;
@@ -27,12 +24,12 @@ namespace Assistant.view.Pages
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
-            Category selectedCategory=lbTitleCategory.SelectedItem as Category;
+            Category selectedCategory = lbTitleCategory.SelectedItem as Category;
             if (selectedCategory == null)
             {
                 lbCategory.Content = "Вы не выбрали категорию категорию";
             }
-            if(selectedCategory != null)
+            if (selectedCategory != null)
             {
                 NavigationService.Navigate(new ViewNotesForEdit(selectedCategory));
             }
@@ -43,13 +40,36 @@ namespace Assistant.view.Pages
             NavigationService.GoBack();
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void btnEditCategory_Click(object sender, RoutedEventArgs e)
         {
-            Category category=lbTitleCategory.SelectedItem as Category;
+            Category category = lbTitleCategory.SelectedItem as Category;
             if (category != null)
             {
-                
+                tbCategory.Visibility = Visibility.Visible;
+                tbCategory.Text = "Введите новое название категории";
+                btnEditCategory.Visibility = Visibility.Hidden;
+                btnSaveCategory.Visibility = Visibility.Visible;
+                btnSaveCategory.Content = "Сохранить";
             }
+        }
+        private void TextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && !textBox.IsKeyboardFocused)
+            {
+                textBox.Clear();
+                e.Handled = true;
+                textBox.Focus();
+            }
+        }
+
+        private void btnSaveCategory_Click(object sender, RoutedEventArgs e)
+        {
+            Category selectedCategory = lbTitleCategory.SelectedItem as Category;
+            if (tbCategory.Text == "") return;
+            selectedCategory.Title = tbCategory.Text;
+            _repository.UpdateCategory(selectedCategory);
+            tbCategory.Text = "Категория изменена";
         }
     }
 }
