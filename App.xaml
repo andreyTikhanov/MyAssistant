@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Assistant"
              StartupUri="view/Windows/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Resources\Buttons\ButtonsDictionary.xaml"/>
     </Application.Resources>
 </Application>

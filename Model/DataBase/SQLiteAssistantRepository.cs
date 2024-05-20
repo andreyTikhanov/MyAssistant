@@ -219,7 +219,6 @@ namespace Assistant.model
 
             return notes;
         }
-
     }
 
 }

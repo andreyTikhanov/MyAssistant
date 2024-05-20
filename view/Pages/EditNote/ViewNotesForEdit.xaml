@@ -17,33 +17,12 @@
             DisplayMemberPath="Title"
             Foreground="#4a4a08" FontSize="20"
             Margin="0 0 0 10" Background="#0c939b"
-            x:Name="lbTitleNotes" Height="280"/>
-        <TextBox Background="#0c939b" PreviewMouseDown="TextBox_PreviewMouseDown"
-          FontSize="20" Foreground="#4a4a08"
-          Visibility="Hidden" Name="tbNote"
-          />
-        <Button Click="btnSaveNote_Click"
-            Margin="260 5" Background="#0c939b"
-            Foreground="#4a4a08" Padding="5"
-            FontSize="20" Visibility="Collapsed" 
-            Name="btnSaveNote"
-            Content="Редактировать заметку"/>
-        <Button Click="btnEditNote_Click"
-            Margin="260 5" Background="#0c939b"
-            Foreground="#4a4a08" Padding="5"
-             FontSize="20" Visibility="Visible" 
-            Name="btnEditNote"
-            Content="Редактировать заметку "/>
-        
+            x:Name="lbTitleNotes" Height="360"/>
         <Button Click="btnContinue_Click"
-            Margin="260 5" Background="#0c939b"
-            Foreground="#4a4a08"
-            Padding="5"  FontSize="20"
+            Style="{StaticResource myButton}"
             Content="Продолжить"></Button>
         <Button Click="btnBack_Click"
-            Margin="260 5" Background="#0c939b"
-            Foreground="#4a4a08" Padding="5"
-            FontSize="20" 
+            Style="{StaticResource myButton}"
             Content="Назад"></Button>
     </StackPanel>
 </Page>
