@@ -104,9 +104,9 @@ namespace Assistant.model
         public void RemoveCategory(Category category)
         {
             if (!OpenConnect()) return;
-            string query = "DELETE FROM category WHERE id = @id;";
+            string query = "DELETE FROM category WHERE title = @t;";
             SqliteCommand cmd = _connection.CreateCommand(); cmd.CommandText = query;
-            cmd.Parameters.AddWithValue("@id", category.Id);
+            cmd.Parameters.AddWithValue("@t", category.Title);
             cmd.ExecuteNonQuery();
             CloseConnect();
         }

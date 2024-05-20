@@ -39,8 +39,11 @@ namespace Assistant.view
         private void btnView_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ViewCategories());
+        }
 
-
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ViewForEditCategory());
         }
     }
 }
