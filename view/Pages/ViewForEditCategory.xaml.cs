@@ -9,7 +9,7 @@ namespace Assistant.view.Pages
     public partial class ViewForEditCategory : Page
     {
         SQLiteAssistantRepository _repository;
-        List<Category> _categories;
+    
         public ViewForEditCategory()
         {
             _repository = new SQLiteAssistantRepository();

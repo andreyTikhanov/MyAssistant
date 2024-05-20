@@ -60,12 +60,13 @@ namespace Assistant.model
         public void UpdateNote(Note note)
         {
             if (!OpenConnect()) return;
-            string query = "UPDATE note SET title = @tn, description = @dn, id_category = @ic);";
+            string query = "UPDATE note SET title = @tn, description = @dn, id_category = @ic where id = @id";
             SqliteCommand cmd = _connection.CreateCommand();
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@tn", note.Title);
             cmd.Parameters.AddWithValue("@dn", note.Description);
             cmd.Parameters.AddWithValue("@ic", note.Id_category);
+            cmd.Parameters.AddWithValue("@id", note.Id);
             cmd.ExecuteNonQuery();
             CloseConnect();
         }
