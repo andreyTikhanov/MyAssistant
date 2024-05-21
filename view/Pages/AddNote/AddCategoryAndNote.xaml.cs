@@ -39,9 +39,7 @@ namespace Assistant.view.Pages
             note.Id_category = category.Id;
             _repository.AddNote(note);
             lbTitleCategory.Content = "Заметка успешно сохранена";
-            tbTitleCategory.Text = "";
-            tbTitleNote.Text = "";
-            tbDescriptionNote.Text = "";
+            NavigationService.GoBack();
         }
     }
 }

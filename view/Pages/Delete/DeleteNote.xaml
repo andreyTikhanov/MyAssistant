@@ -1,0 +1,28 @@
+﻿<Page x:Class="Assistant.view.Pages.Delete.DeleteNote"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Assistant.view.Pages.Delete"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="DeleteNote">
+    <StackPanel Background="#096f79">
+        <Label Foreground="#4a4a08"
+     FontSize="20" Margin="10 10 "
+     Name="lbNotes"
+     Content="Выберите заметку для удаления:"/>
+        <ListBox DisplayMemberPath="Title"
+        Foreground="#4a4a08" FontSize="20"
+        Margin="0 0 0 10" Background="#0c939b"
+        x:Name="lbTitleNotes" Height="350"/>
+        <Button Click="btnDeleteClick"
+        Style="{StaticResource myButton}"
+        Content="Удалить заметку"/>
+        <Button Click="btnBack_Click"
+        Style="{StaticResource myButton}"
+        Content="Назад"></Button>
+       
+    </StackPanel>
+
+</Page>

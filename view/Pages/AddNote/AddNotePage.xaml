@@ -10,7 +10,7 @@
    
     <StackPanel Background="#096f79">
         <Label Foreground="#4a4a08" FontSize="20" Margin="150 10 " Content="       Выберите категорию или создайте новую:"></Label>
-        <ListBox DisplayMemberPath="Title" Margin="0 0 0 10" Background="#0c939b" x:Name="lbCategory" Height="320"></ListBox>
+        <ListBox DisplayMemberPath="Title" Margin="0 0 0 10" Background="#0c939b" Foreground="#4a4a08" x:Name="lbCategory" FontSize="20" Height="320"></ListBox>
         <Button Click="btnContinue_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Продолжить"></Button>
         <Button Click="btnAddCategory_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Создать категорию"></Button>
         <Button Click="btnBack_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Назад"></Button>

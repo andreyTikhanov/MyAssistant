@@ -28,7 +28,9 @@ namespace Assistant.view.Pages.Delete
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {
-
+            Category selectedCategory = lbTitleCategory.SelectedItem as Category;
+            if (selectedCategory == null) return;
+            NavigationService.Navigate(new DeleteNote(selectedCategory));
         }
 
         private void btnDeleteClick(object sender, RoutedEventArgs e)
