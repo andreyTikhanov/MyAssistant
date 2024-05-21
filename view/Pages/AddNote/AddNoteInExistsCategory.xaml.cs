@@ -34,8 +34,7 @@ namespace Assistant.view
             note.Id_category = category.Id;
             _repository.AddNote(note);
             lbTitleCategory.Content = "Заметка успешно добавлена";
-            tbTitleNote.Text = "";
-            tbDescriptionNote.Text = "";
+            NavigationService.GoBack();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {

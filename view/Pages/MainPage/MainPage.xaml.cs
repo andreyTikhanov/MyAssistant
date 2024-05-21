@@ -1,4 +1,5 @@
 ﻿using Assistant.view.Pages;
+using Assistant.view.Pages.Delete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,11 @@ namespace Assistant.view
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ViewForEditCategory());
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DeleteCategory());
         }
     }
 }
