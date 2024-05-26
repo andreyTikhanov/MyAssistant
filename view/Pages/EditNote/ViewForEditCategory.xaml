@@ -34,13 +34,13 @@
             FontSize="20" Visibility="Visible" 
             Name="btnEditCategory"
             Content="Редактировать категорию "/>
-       
-        <Button Click="btnContinue_Click"
+
+        <Button IsDefault="True" Click="btnContinue_Click"
              Margin="260 5" Background="#0c939b"
              Foreground="#4a4a08" Visibility="Visible"
              Padding="5"  FontSize="20"
              Content="Продолжить"></Button>
-        <Button Click="btnBack_Click"
+        <Button  Click="btnBack_Click"
              Margin="260 5" Background="#0c939b"
              Foreground="#4a4a08" Padding="5"
              FontSize="20" Visibility="Visible"

@@ -18,7 +18,7 @@
             Margin="0 0 0 10" Background="#0c939b"
             x:Name="lbTitleCategory" Height="320"/>
 
-        <Button Click="btnContinue_Click" Visibility="Visible"
+        <Button IsDefault="True" Click="btnContinue_Click" Visibility="Visible"
           Style="{StaticResource myButton}"
           Content="Продолжить"></Button>
         <Button Click="btnBack_Click"

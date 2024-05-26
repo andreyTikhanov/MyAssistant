@@ -24,7 +24,7 @@
                  Background="#0c939b"
                  x:Name="tbDescriptionNote" Height="200"
                  PreviewMouseDown="TextBox_PreviewMouseDown"></TextBox>
-        <Button Click="btnSave_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Сохранить"></Button>
+        <Button IsDefault="True" Click="btnSave_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Сохранить"></Button>
         <Button Click="btnBack_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Назад"></Button>
     </StackPanel>
 

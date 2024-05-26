@@ -10,7 +10,7 @@
 
     <Page.Resources>
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#a0d3bf"/>
+            <Setter Property="Background" Value="#DECBB7"/>
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
@@ -23,7 +23,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#1db6a7"/>
+                                <Setter TargetName="border" Property="Background" Value="#F7F0F5"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -31,8 +31,8 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <Grid Background="#096f79">
-        <Label Foreground="#4a4a08" Content="My assistant" FontSize="20" Margin="25,12,562,389"></Label>
+    <Grid Background="#8F857D">
+        <Label Foreground="#DECBB7" Content="My assistant" FontSize="20" Margin="25,12,562,389"></Label>
         <Button Click="btnAddNote_Click"
                 Content="Добавить заметку"
                 HorizontalAlignment="Left" VerticalAlignment="Top"

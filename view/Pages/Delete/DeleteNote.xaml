@@ -16,7 +16,7 @@
         Foreground="#4a4a08" FontSize="20"
         Margin="0 0 0 10" Background="#0c939b"
         x:Name="lbTitleNotes" Height="350"/>
-        <Button Click="btnDeleteClick"
+        <Button IsDefault="True" Click="btnDeleteClick"
         Style="{StaticResource myButton}"
         Content="Удалить заметку"/>
         <Button Click="btnBack_Click"

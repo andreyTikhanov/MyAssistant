@@ -17,9 +17,7 @@ using System.Windows.Shapes;
 
 namespace Assistant.view
 {
-    /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
-    /// </summary>
+    
     public partial class MainPage : Page
     {
         public MainPage()
