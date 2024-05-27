@@ -7,25 +7,28 @@
         mc:Ignorable="d"
         Title="" Height="240" Width="400"
         WindowStartupLocation="CenterScreen">
-
-    <Grid Background="#096f79"  >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+    <StackPanel Grid.Row="0" 
+        Background="#FCDE9C"  >
         <Label Name="lbDialog" Content="Вы действительно хотите удалить?"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
-               FontSize="15" Foreground="#4a4a08" Margin="0,24,0,0"/>
-
-
-        <Button Foreground="#4a4a08" Background="#0c939b" FontSize="18"
-                Content="Да" Name="btnYes" Click="btnYes_Click" Margin="45,104,246,69" RenderTransformOrigin="0.482,0.152"/>
-
-        <Button Foreground="#4a4a08" Background="#0c939b" FontSize="18"
-                Content="Нет" Name="btnNo" Click="btnNo_Click" Margin="246,104,45,69" RenderTransformOrigin="0.491,0.003"/>
-
-
-
-
+               Style="{StaticResource Labels}" Margin="0,24,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+            Background="#FCDE9C" >
+            <Button Style="{StaticResource myButton}" Width="100"
+             Content="Да" Margin="50 10 0 10" Click="btnYes_Click"       />
+            <Button Style="{StaticResource myButton}" Content="Нет"
+                    Margin="100 10 0 10" Width="100"
+                    Click="btnNo_Click"/>
+        </StackPanel>
 
     </Grid>
-
 
 </Window>

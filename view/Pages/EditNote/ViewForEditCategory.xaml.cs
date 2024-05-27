@@ -21,6 +21,14 @@ namespace Assistant.view.Pages
             List<Category> categories = _repository.GetAllCategories();
             lbTitleCategory.ItemsSource = categories.ToList();
         }
+        private void lbCategory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            if (lbTitleCategory.SelectedItem != null)
+            {
+                btnContinue_Click(this, new RoutedEventArgs());
+            }
+        }
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {

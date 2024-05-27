@@ -1,6 +1,7 @@
 ﻿using Assistant.model;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace Assistant.view.Pages
@@ -25,7 +26,14 @@ namespace Assistant.view.Pages
         {
             List<Note> notes = _repository.SelectedCategory(category);
             lbTitleNotes.ItemsSource = notes.ToList();
+        }
+        private void lbCategory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
 
+            if (lbTitleNotes.SelectedItem != null)
+            {
+                btnContinue_Click(this, new RoutedEventArgs());
+            }
         }
 
         private void btnContinue_Click(object sender, RoutedEventArgs e)

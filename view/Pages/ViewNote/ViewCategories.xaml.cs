@@ -1,6 +1,7 @@
 ﻿using Assistant.model;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace Assistant.view.Pages
@@ -21,6 +22,14 @@ namespace Assistant.view.Pages
         {
             List<Category> categories = _repository.GetAllCategories();
             lbTitleCategory.ItemsSource = categories.ToList();
+        }
+        private void lbCategory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            if (lbTitleCategory.SelectedItem != null)
+            {
+                btnContinue_Click(this, new RoutedEventArgs());
+            }
         }
         private void btnContinue_Click(object sender, RoutedEventArgs e)
         {

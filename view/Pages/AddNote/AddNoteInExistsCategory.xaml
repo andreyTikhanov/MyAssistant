@@ -7,13 +7,16 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AddNoteInExistsCategory">
-    <StackPanel Background="#096f79">
-        <Label Name="lbTitleCategory" Foreground="#4a4a08" FontSize="20" Margin="10 10" Content=""/>
-        <Label Foreground="#4a4a08" FontSize="20" Margin="10 10 " Content="Введите название заметки:"></Label>
-        <TextBox Foreground="#4a4a08" FontSize="20" Margin="0 0 0 10" Background="#0c939b" x:Name="tbTitleNote" Height="30"></TextBox>
-        <Label Foreground="#4a4a08" FontSize="20" Margin="10 10 " Content="Введите описание заметки:"></Label>
-        <TextBox Foreground="#4a4a08" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" Margin="0 0 0 10" Background="#0c939b" x:Name="tbDescriptionNote" Height="200"></TextBox>
-        <Button IsDefault="True" Click="btnSave_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Сохранить"></Button>
-        <Button Click="btnBack_Click" Margin="280 5" Background="#0c939b" Foreground="#4a4a08" Padding="5"  FontSize="20" Content="Назад"></Button>
+    <StackPanel Background="#FCDE9C">
+        <Label Name="lbTitleCategory" Style="{StaticResource Labels}" Margin="10 0" Content=""/>
+        <Label Style="{StaticResource Labels}" Margin="10 0 " Content="Введите название заметки:"></Label>
+        <TextBox Style="{StaticResource TextBoxes}" Margin="10 0 10 10" x:Name="tbTitleNote" Height="30"></TextBox>
+        <Label Style="{StaticResource Labels}" Margin="10 0 " Content="Введите описание заметки:"></Label>
+        <TextBox Style="{StaticResource TextBoxes}"
+                 TextWrapping="Wrap" AcceptsReturn="True"
+                 Margin="10 0 10 10" 
+                 x:Name="tbDescriptionNote" Height="290"></TextBox>
+        <Button IsDefault="True" Click="btnSave_Click" Margin="280 5" Style="{StaticResource myButton}" Padding="5" Content="Сохранить"></Button>
+        <Button Click="btnBack_Click" Margin="280 5" Style="{StaticResource myButton}" Padding="5"  Content="Назад"></Button>
     </StackPanel>
 </Page>

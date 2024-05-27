@@ -18,7 +18,7 @@ namespace Assistant.view
         {
             InitializeComponent();
             this.category = category;
-            lbTitleCategory.Content= category.Title;
+            lbTitleCategory.Content="Выбрана категория:  "+category.Title;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

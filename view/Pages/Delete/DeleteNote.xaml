@@ -7,21 +7,37 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Title="DeleteNote">
-    <StackPanel Background="#096f79">
-        <Label Foreground="#4a4a08"
-     FontSize="20" Margin="10 10 "
-     Name="lbNotes"
-     Content="Выберите заметку для удаления:"/>
-        <ListBox DisplayMemberPath="Title"
-        Foreground="#4a4a08" FontSize="20"
-        Margin="0 0 0 10" Background="#0c939b"
-        x:Name="lbTitleNotes" Height="350"/>
-        <Button IsDefault="True" Click="btnDeleteClick"
-        Style="{StaticResource myButton}"
-        Content="Удалить заметку"/>
+    <StackPanel Background="#FCDE9C">
+            <Label Style ="{StaticResource Labels}"
+            Margin="10 10 "
+            Name="lbNotes"
+            Content="Выберите заметку для удаления:"/>
+
+        <ListBox Margin="10,20,10,10" Background="#DECBB7"  x:Name="lbTitleNotes" FontSize="20" Height="360" ItemContainerStyle="{StaticResource CustomListBoxItemStyle}" MouseDoubleClick="lbCategory_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ListBox}}"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="100" Height="150" Margin="10" HorizontalAlignment="Center">
+                        <Image Source="\Icons\notes-icon-1.png" Width="75" Height="75" Margin="0,0,0,5"/>
+                        <TextBlock Text="{Binding Title}" TextWrapping="Wrap" TextAlignment="Center" Width="90" MaxWidth="90" VerticalAlignment="Top" FontSize="14" Foreground="#BA5624"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button IsDefault="True"
+            Click="btnDeleteClick"
+            Style="{StaticResource myButton}"
+            Margin="0 10" Width="160"
+            Content="Удалить заметку"/>
         <Button Click="btnBack_Click"
-        Style="{StaticResource myButton}"
-        Content="Назад"></Button>
+                Width="160"
+            Style="{StaticResource myButton}"
+            Content="Назад"></Button>
        
     </StackPanel>
 

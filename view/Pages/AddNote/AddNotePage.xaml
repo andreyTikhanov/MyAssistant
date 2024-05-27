@@ -12,7 +12,7 @@
 
         <Label Foreground="#BA5624" FontSize="20" Margin="150,10,0,0" Content="     Выберите категорию или создайте новую:" />
 
-        <ListBox Margin="0,50,0,10" Background="#DECBB7"  x:Name="lbCategory" FontSize="20" Height="320" ItemContainerStyle="{StaticResource CustomListBoxItemStyle}" MouseDoubleClick="lbCategory_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ListBox Margin="10,20,10,10" Background="#DECBB7"  x:Name="lbCategory" FontSize="20" Height="360" ItemContainerStyle="{StaticResource CustomListBoxItemStyle}" MouseDoubleClick="lbCategory_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ListBox}}"/>
@@ -29,8 +29,15 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Visibility="Hidden" x:Name="btnContinue" IsDefault="True" Click="btnContinue_Click" Margin="280,5,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Продолжить" />
-        <Button Click="btnAddCategory_Click" Margin="280,-20,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Создать" />
+        <Button Visibility="Hidden" x:Name="btnContinue"
+                IsDefault="True" Click="btnContinue_Click"
+                Margin="280,5,280,0"
+                Style="{StaticResource myButton}"
+                Padding="5" Content="Продолжить" />
+        <Button Click="btnAddCategory_Click" 
+                Margin="280,-20,280,0"
+                Style="{StaticResource myButton}"
+                Padding="5" Content="Создать" />
         <Button Click="btnBack_Click" Margin="280,20,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Назад" />
     </StackPanel>
 

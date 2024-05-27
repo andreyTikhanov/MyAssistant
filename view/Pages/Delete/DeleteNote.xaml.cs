@@ -2,6 +2,7 @@
 using Assistant.view.Windows;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Assistant.view.Pages.Delete
 {
@@ -25,6 +26,14 @@ namespace Assistant.view.Pages.Delete
         {
             List<Note> notes = _repository.SelectedCategory(category);
             lbTitleNotes.ItemsSource = notes.ToList();
+        }
+        private void lbCategory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            if (lbTitleNotes.SelectedItem != null)
+            {
+                btnDeleteClick(this, new RoutedEventArgs());
+            }
         }
 
         private void btnDeleteClick(object sender, RoutedEventArgs e)

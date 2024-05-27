@@ -5,16 +5,29 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Assistant.view.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="AddCategoryAndNote">
-    <StackPanel Background="#00072D">
-        <Label Name="lbTitleCategory" Foreground="#A6E1FA" FontSize="20" Margin="10 10" Content="Введите название категории"/>
-        <TextBox Foreground="#0E6BA8" FontSize="20" Background="#0A2472" x:Name="tbTitleCategory" Height="30"></TextBox>
-        <Label Foreground="#A6E1FA" FontSize="20" Margin="10 10 " Content="Введите название заметки:"></Label>
-        <TextBox Foreground="#0A2472" FontSize="20" Background="#0A2472" x:Name="tbTitleNote" Height="30"></TextBox>
-        <Label Foreground="#A6E1FA" FontSize="20" Margin="10 10 " Content="Введите описание заметки:"></Label>
-        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Foreground="#A6E1FA" FontSize="20" Margin="0 0 0 10" Background="#0A2472" x:Name="tbDescriptionNote" Height="200"></TextBox>
-        <Button IsDefault="True" Click="btnSave_Click" Margin="280 5" Background="#0E6BA8" Foreground="#A6E1FA" Padding="5"  FontSize="20" Content="Сохранить"></Button>
-        <Button Click="btnBack_Click" Margin="280 5" Background="#0E6BA8" Foreground="#A6E1FA" Padding="5"  FontSize="20" Content="Назад"></Button>
+    <StackPanel Background="#FCDE9C">
+        <Label Name="lbTitleCategory"
+               Foreground="#BA5624" 
+               FontSize="20" Margin="10 0"
+               Content="Введите название категории"/>
+        <TextBox Style="{StaticResource TextBoxes}"
+                 x:Name="tbTitleCategory" Margin="10 0 10 0"
+                 Height="30"/>
+        <Label Foreground="#BA5624" FontSize="20"
+               Margin="10 10 "
+               Content="Введите название заметки:"/>
+        <TextBox Style="{StaticResource TextBoxes}"
+                 x:Name="tbTitleNote" Margin="10 0 10 0"
+                 Height="30"/>
+        <Label Foreground="#BA5624" FontSize="20"
+               Margin="10 10 " 
+               Content="Введите описание заметки:"/>
+        <TextBox TextWrapping="Wrap" 
+                 AcceptsReturn="True" 
+                 Height="230" Margin="10 0 10 10" Style="{StaticResource TextBoxes}" x:Name="tbDescriptionNote"></TextBox>
+        <Button IsDefault="True" Click="btnSave_Click" Margin="280 5" Style="{StaticResource myButton}" Padding="5" Content="Сохранить"></Button>
+        <Button Click="btnBack_Click" Margin="280 5"  Padding="5" Style="{StaticResource myButton}" Content="Назад"></Button>
     </StackPanel>
 </Page>
