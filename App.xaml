@@ -6,27 +6,10 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources\Buttons\ButtonsDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/ListBoxes/ListBoxeResources.xaml"/>
+                <ResourceDictionary Source="Resources/Buttons/ButtonsDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
-            <ControlTemplate x:Key="IconListBoxTemplate" TargetType="ListBox">
-                <StackPanel Background="#F7F0F5">
-                    <ListBox ItemsPanel="{DynamicResource IconItemsPanelTemplate}" 
-                             ItemTemplate="{DynamicResource IconItemTemplate}"
-                             />
-                </StackPanel>
-            </ControlTemplate>
-
-            <ItemsPanelTemplate x:Key="IconItemsPanelTemplate">
-                <WrapPanel />
-            </ItemsPanelTemplate>
-
-            <DataTemplate x:Key="IconItemTemplate">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="pack://application:,,,/Icons/Main.png" Width="50" Height="50" Margin="5"/>
-                    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
+
 </Application>

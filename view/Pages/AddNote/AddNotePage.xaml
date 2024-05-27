@@ -8,29 +8,36 @@
        d:DesignHeight="600" d:DesignWidth="800"
        Title="AddNotePage">
 
-    <StackPanel Background="#DECBB7">
-        <Label Foreground="#5C5552" FontSize="20" Margin="150,10,0,0" Content="     Выберите категорию или создайте новую:" />
+    <StackPanel Background="#FCDE9C">
 
-        <ListBox Margin="0,50,0,10" Background="#8F857D" Foreground="#5C5552" x:Name="lbCategory" FontSize="20" Height="320">
+        <Label Foreground="#BA5624" FontSize="20" Margin="150,10,0,0" Content="     Выберите категорию или создайте новую:" />
+
+        <ListBox Margin="0,50,0,10" Background="#DECBB7"  x:Name="lbCategory" FontSize="20" Height="320" ItemContainerStyle="{StaticResource CustomListBoxItemStyle}" MouseDoubleClick="lbCategory_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel />
+                    <WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ListBox}}"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Width="100" Height="120" Margin="10" HorizontalAlignment="Center">
-                        <Image Source="C:\Users\andre\source\repos\Assistant\Assistant\Icons\Main.png" Width="64" Height="64" Margin="0,0,0,5"/>
-                        <TextBlock Text="{Binding Title}" TextWrapping="Wrap" TextAlignment="Center" Width="80" HorizontalAlignment="Center" FontSize="16" Foreground="#5C5552"/>
+                    <StackPanel Orientation="Vertical" Width="100" Height="150" Margin="10" HorizontalAlignment="Center">
+                        <Image Source="\Icons\notes-icon-1.png" Width="75" Height="75" Margin="0,0,0,5"/>
+                        <TextBlock Text="{Binding Title}" TextWrapping="Wrap" TextAlignment="Center" Width="90" MaxWidth="90" VerticalAlignment="Top" FontSize="14" Foreground="#BA5624"/>
                     </StackPanel>
+
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button IsDefault="True" Click="btnContinue_Click" Margin="280,5,280,0" Background="#8F857D" Foreground="#5C5552" Padding="5" FontSize="20" Content="Продолжить" />
-        <Button Click="btnAddCategory_Click" Margin="280,5,280,0" Background="#8F857D" Foreground="#5C5552" Padding="5" FontSize="20" Content="Создать категорию" />
-        <Button Click="btnBack_Click" Margin="280,5,280,0" Background="#8F857D" Foreground="#5C5552" Padding="5" FontSize="20" Content="Назад" />
+        <Button Visibility="Hidden" x:Name="btnContinue" IsDefault="True" Click="btnContinue_Click" Margin="280,5,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Продолжить" />
+        <Button Click="btnAddCategory_Click" Margin="280,-20,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Создать" />
+        <Button Click="btnBack_Click" Margin="280,20,280,0" Style="{StaticResource myButton}" Padding="5" FontSize="20" Content="Назад" />
     </StackPanel>
+
+
+
+
+
 </Page>
 
 

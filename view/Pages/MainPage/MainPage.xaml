@@ -8,55 +8,46 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
-    <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="#DECBB7"/>
-            <Setter Property="Foreground" Value="Gray"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
-            <Setter Property="Margin" Value="236,315,216,60"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#F7F0F5"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-    <Grid Background="#8F857D">
-        <Label Foreground="#DECBB7" Content="My assistant" FontSize="20" Margin="25,12,562,389"></Label>
+
+    <Grid Background="#FBF2C0">
+        <Image Source="C:\Users\andre\source\repos\Assistant\Assistant\MainFoneAssistant.jpg"
+               Stretch="Fill"/>
+        <Label Foreground="#FBF2C0" Content="My assistant" FontSize="20" Margin="35,45,562,374"></Label>
         <Button Click="btnAddNote_Click"
+                Style="{StaticResource myButton}"
                 Content="Добавить заметку"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                Width="240" Height="50"
-                Margin="282,73,0,0"/>
+                Width="230" Height="45"
+                Margin="82,120,0,0"
+                />
+
         <Button Click="btnView_Click" 
+                Style="{StaticResource myButton}"
                 Content="Посмотреть заметку" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Width="240" Height="50"
-                Margin="281,141,0,0"/>
+                Width="230" Height="45"
+                
+                Margin="82,190,0,0"/>
         <Button Content="Редактировать заметку"
+                Style="{StaticResource myButton}"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                Width="240" Height="50"
-                Margin="281,206,0,0"
+                Width="230" Height="45"
+                Margin="82,260,0,0"
+               
                 Click="btnEdit_Click"/>
         <Button Content="Удалить заметку"
+                Style="{StaticResource myButton}"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                Width="240" Height="50"
-                Margin="282,270,0,0"
+                Width="230" Height="45"
+                Margin="82,330,0,0"
+               
                 Click="btnDelete_Click"/>
         <Button Click="btnExit_Click" 
+                Style="{StaticResource myButton}"
                 Content="Выйти"
+                
                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                Width="240" Height="50"
-                Margin="282,337,0,0"/>
+                Width="150" Height="45"
+                Margin="320,450,0,0"/>
     </Grid>
 </Page>

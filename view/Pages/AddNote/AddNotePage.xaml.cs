@@ -2,6 +2,7 @@
 using Assistant.view.Pages;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Xml.Linq;
@@ -27,6 +28,15 @@ namespace Assistant.view
             List<Category> categories = _repository.GetAllCategories();
             lbCategory.ItemsSource = categories;
         }
+        private void lbCategory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+           
+            if (lbCategory.SelectedItem != null)
+            {
+                btnContinue_Click(this, new RoutedEventArgs());
+            }
+        }
+
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
